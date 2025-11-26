@@ -532,7 +532,7 @@ Conversion JSON personnalisée pour les objets Java.
 
 ---
 
-## 📚 Références
+##  Références
 
 - [Apache Kafka Documentation](https://kafka.apache.org/documentation/)
 - [Kafka Streams Documentation](https://kafka.apache.org/documentation/streams/)
@@ -540,12 +540,12 @@ Conversion JSON personnalisée pour les objets Java.
 
 ---
 
-## 👨‍💻 Auteur
+##  Auteur
 
 **Hajar Elfallaki-idrissi**
 ---
 
-## 📄 Licence
+##  Licence
 
 Ce projet est réalisé dans le cadre d'un exercice académique.
 
