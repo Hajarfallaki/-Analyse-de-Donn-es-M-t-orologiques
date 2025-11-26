@@ -2,7 +2,7 @@
 
 Application de traitement de flux en temps réel pour l'analyse de données météorologiques collectées depuis des stations météo via Apache Kafka.
 
-## 📋 Table des Matières
+##  Table des Matières
 
 - [Description du Projet](#description-du-projet)
 - [Architecture](#architecture)
@@ -17,7 +17,7 @@ Application de traitement de flux en temps réel pour l'analyse de données mét
 
 ---
 
-## 📖 Description du Projet
+##  Description du Projet
 
 Une entreprise collecte des données météorologiques en temps réel via Kafka. Chaque station météorologique envoie des messages dans le topic Kafka `weather-data`. Cette application Kafka Streams traite ces données pour :
 
@@ -44,38 +44,11 @@ StationX : Température Moyenne = XX.XX°F, Humidité Moyenne = XX.XX%
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    Stations Météorologiques                 │
-│          Station1, Station2, Station3, ...                  │
-└─────────────────────┬───────────────────────────────────────┘
-                      │ Envoi de données CSV
-                      ▼
-┌─────────────────────────────────────────────────────────────┐
-│                   Kafka Topic: weather-data                 │
-│            Format: station,temperature,humidity             │
-└─────────────────────┬───────────────────────────────────────┘
-                      │
-                      ▼
-┌─────────────────────────────────────────────────────────────┐
-│              Application Kafka Streams (Java)               │
-│                                                             │
-│  1. Lecture des données (KStream)                          │
-│  2. Filtrage (température > 30°C)                          │
-│  3. Conversion Celsius → Fahrenheit                        │
-│  4. Groupement par station (KGroupedStream)                │
-│  5. Agrégation des moyennes (KTable)                       │
-│                                                             │
-│  State Store: station-stats-store                          │
-└─────────────────────┬───────────────────────────────────────┘
-                      │
-                      ▼
-┌─────────────────────────────────────────────────────────────┐
-│              Kafka Topic: station-averages                  │
-│     Format: "StationX : Temp Moyenne = XX°F, Hum = XX%"   │
-└─────────────────────────────────────────────────────────────┘
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/c2f442de-8353-4c6d-9753-ae4623865bbf" />
+
 ```
 
 ---
@@ -105,7 +78,7 @@ docker-compose --version
 
 ---
 
-## 📦 Installation
+##  Installation
 
 ### 1. Cloner le Projet
 
@@ -185,7 +158,7 @@ java -jar target/weather-streams-1.0-SNAPSHOT.jar
 
 ---
 
-## 🚀 Utilisation
+##  Utilisation
 
 ### Démarrage Complet
 
@@ -244,7 +217,7 @@ Station2 : Température Moyenne = 94.25°F, Humidité Moyenne = 71.00%
 
 ---
 
-## 🧪 Tests
+## Tests
 
 ### Scénario 1 : Filtrage des Températures
 
@@ -333,7 +306,7 @@ weather-data-streaming/
 
 ---
 
-## 🛠️ Technologies Utilisées
+##  Technologies Utilisées
 
 | Technologie | Version | Usage |
 |-------------|---------|-------|
@@ -347,8 +320,29 @@ weather-data-streaming/
 | **Kafka UI** | latest | Interface web pour Kafka |
 
 ---
+## Les captures d'écrans
+<img width="1466" height="535" alt="Capture d&#39;écran 2025-11-26 015053" src="https://github.com/user-attachments/assets/b7c39e4f-e777-4bda-b586-195b3ee2f0db" />
 
-## 📊 Interface Web Kafka UI
+<img width="1474" height="382" alt="Capture d&#39;écran 2025-11-26 015104" src="https://github.com/user-attachments/assets/f1ebbff8-83b8-4adf-9d93-cf523540bcb5" />
+
+<img width="1448" height="522" alt="Capture d&#39;écran 2025-11-26 015110" src="https://github.com/user-attachments/assets/872cb9dc-bc5b-4186-bc16-f08bbb4fc177" />
+
+<img width="1918" height="611" alt="Capture d&#39;écran 2025-11-26 020113" src="https://github.com/user-attachments/assets/bbc59b97-2d93-4453-a604-a9f287b73928" />
+
+<img width="1913" height="866" alt="Capture d&#39;écran 2025-11-26 020125" src="https://github.com/user-attachments/assets/651c91b5-6c05-4a99-a74d-c9e74d50a6f8" />
+
+<img width="1898" height="763" alt="Capture d&#39;écran 2025-11-26 020142" src="https://github.com/user-attachments/assets/9984c53f-f1b3-46fb-8954-6f53ae95dae6" />
+
+<img width="1902" height="676" alt="Capture d&#39;écran 2025-11-26 020304" src="https://github.com/user-attachments/assets/c8c72958-a25f-45c3-a646-dddfd72a290e" />
+
+<img width="1649" height="819" alt="Capture d&#39;écran 2025-11-26 020419" src="https://github.com/user-attachments/assets/2057b3a4-1bea-4c1d-beb8-8d43d74559f3" />
+
+<img width="850" height="879" alt="Capture d&#39;écran 2025-11-26 020449" src="https://github.com/user-attachments/assets/1e62429a-27ad-4e37-a0f0-f1ad7ea1d3b7" />
+
+<img width="1876" height="761" alt="Capture d&#39;écran 2025-11-26 020838" src="https://github.com/user-attachments/assets/517edbd6-4839-4862-b27a-dc0eaf73d48c" />
+
+---
+##  Interface Web Kafka UI
 
 L'application inclut Kafka UI pour une visualisation en temps réel.
 
@@ -364,7 +358,7 @@ L'application inclut Kafka UI pour une visualisation en temps réel.
 
 ---
 
-## 🔍 Commandes Utiles
+##  Commandes Utiles
 
 ### Gestion de Kafka
 
@@ -424,7 +418,7 @@ docker system prune -f
 
 ---
 
-## 🐛 Dépannage
+##  Dépannage
 
 ### Problème : Application ne démarre pas
 
@@ -472,7 +466,7 @@ docker exec kafka-ui ping kafka -c 3
 
 ---
 
-## 📈 Performance et Scalabilité
+##  Performance et Scalabilité
 
 ### Configuration de Production
 
@@ -499,7 +493,7 @@ java -Dcom.sun.management.jmxremote \
 
 ---
 
-## 📝 Logs
+## Logs
 
 ### Emplacement des Logs
 
@@ -557,7 +551,7 @@ Ce projet est réalisé dans le cadre d'un exercice académique.
 
 ---
 
-## 🎯 Résumé des Commandes Essentielles
+##  Résumé des Commandes Essentielles
 
 ```bash
 # 1. Démarrer Kafka
