@@ -53,7 +53,7 @@ StationX : Température Moyenne = XX.XX°F, Humidité Moyenne = XX.XX%
 
 ---
 
-## 🔧 Prérequis
+##  Prérequis
 
 ### Logiciels Requis
 
@@ -129,7 +129,7 @@ docker exec kafka kafka-topics --list --bootstrap-server localhost:9092
 
 ---
 
-## ⚙️ Configuration
+##  Configuration
 
 ### Variables d'Environnement
 
